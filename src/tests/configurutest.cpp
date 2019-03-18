@@ -72,7 +72,8 @@ public:
 #endif
 
 #if TEST_PARSE
-    virtual ParseResultBase* Parse(const char* j, size_t length) const {
+    virtual ParseResultBase* Parse(const char* j, size_t length, const char* jsonFileName, const char* jsonFileName) const {
+        (void)jsonFileName;
         (void)length;
         ConfiguruParseResult* pr = new ConfiguruParseResult;
         try {

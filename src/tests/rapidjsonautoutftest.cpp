@@ -1,4 +1,4 @@
-#include "../test.h"
+/*#include "../test.h"
 
 // __SSE2__ and __SSE4_2__ are recognized by gcc, clang, and the Intel compiler.
 // We use -march=native with gmake to enable -msse2 and -msse4.2, if supported.
@@ -105,7 +105,8 @@ public:
 #endif
 
 #if TEST_PARSE
-    virtual ParseResultBase* Parse(const char* json, size_t length) const {
+    virtual ParseResultBase* Parse(const char* json, size_t length, const char* jsonFileName) const {
+        (void)jsonFileName;
         RapidjsonAutoUTFParseResult* pr = new RapidjsonAutoUTFParseResult;
         MemoryStream ms(json, length);
         AutoUTFInputStream<unsigned, MemoryStream> is(ms);
@@ -120,7 +121,8 @@ public:
 #endif
 
 #if TEST_STRINGIFY
-    virtual StringResultBase* Stringify(const ParseResultBase* parseResult) const {
+    virtual StringResultBase* Stringify(const ParseResultBase* parseResult, const char* jsonFileName) const {
+        (void)jsonFileName;
         const RapidjsonAutoUTFParseResult* pr = static_cast<const RapidjsonAutoUTFParseResult*>(parseResult);
         RapidjsonAutoUTFStringResult* sr = new RapidjsonAutoUTFStringResult;
         AutoUTFOutputStream<unsigned, MemoryBuffer> os(sr->mb, pr->type, pr->hasBOM);
@@ -224,3 +226,4 @@ public:
 };
 
 REGISTER_TEST(RapidjsonAutoUTFTest);
+*/

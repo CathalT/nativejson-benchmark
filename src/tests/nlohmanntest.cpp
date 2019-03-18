@@ -67,7 +67,7 @@ public:
 #endif
 
 #if TEST_PARSE
-    virtual ParseResultBase* Parse(const char* j, size_t length) const {
+    virtual ParseResultBase* Parse(const char* j, size_t length, const char* jsonFileName) const {
         (void)length;
         NlohmannParseResult* pr = new NlohmannParseResult;
         try {
@@ -82,7 +82,8 @@ public:
 #endif
 
 #if TEST_STRINGIFY
-    virtual StringResultBase* Stringify(const ParseResultBase* parseResult) const {
+    virtual StringResultBase* Stringify(const ParseResultBase* parseResult, const char* jsonFileName) const {
+        (void)jsonFileName;
         const NlohmannParseResult* pr = static_cast<const NlohmannParseResult*>(parseResult);
         NlohmannStringResult* sr = new NlohmannStringResult;
         sr->s = pr->root.dump();

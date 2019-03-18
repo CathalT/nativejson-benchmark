@@ -145,9 +145,6 @@ solution "benchmark"
 
 		setTargetObjDir("../bin")
 
-		-- linkLib("jsonclibs")
-		links "jsonclibs"
-
 		configuration "gmake"
 			buildoptions "-std=c++14"
 

@@ -9,6 +9,7 @@
 
 #include <set>
 #include <vector>
+#include <memory>
 
 #include <type_traits>
 
@@ -52,6 +53,17 @@ struct RapidJsonConverter
         return T();
     }
 
+    template<class T, typename std::enable_if<std::is_same<short, T>::value>::type* = nullptr>
+    static T toType(const rapidjson::Value& v)
+    {
+        short returnVal{};
+        if (v.IsInt())
+        {
+            returnVal = static_cast<short>(v.GetInt());
+        }
+        return returnVal;
+    }
+
     template<class T, typename std::enable_if<std::is_same<unsigned short, T>::value>::type* = nullptr>
     static T toType(const rapidjson::Value& v)
     {
@@ -91,7 +103,7 @@ struct RapidJsonConverter
         long returnVal{};
         if (v.IsInt64())
         {
-            returnVal = v.GetInt64();
+            returnVal = static_cast<long>(v.GetInt64());
         }
         return returnVal;
     }

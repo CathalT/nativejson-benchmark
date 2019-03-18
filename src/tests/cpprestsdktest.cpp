@@ -71,7 +71,7 @@ public:
 #endif
 	
 #if TEST_PARSE
-    virtual ParseResultBase* Parse(const char* json, size_t length) const {
+    virtual ParseResultBase* Parse(const char* json, size_t length, const char* jsonFileName) const {
         (void)length;
         CpprestsdkParseResult* pr = new CpprestsdkParseResult;
 		std::istrstream is (json);
@@ -92,7 +92,8 @@ public:
 #endif
 
 #if TEST_STRINGIFY
-    virtual StringResultBase* Stringify(const ParseResultBase* parseResult) const {
+    virtual StringResultBase* Stringify(const ParseResultBase* parseResult, const char* jsonFileName) const {
+        (void)jsonFileName;
         const CpprestsdkParseResult* pr = static_cast<const CpprestsdkParseResult*>(parseResult);
 		CpprestsdkStringResult* sr = new CpprestsdkStringResult;
         std::ostringstream os;

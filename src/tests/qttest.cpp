@@ -129,7 +129,7 @@ public:
 #endif
 
 #if TEST_PARSE
-    virtual ParseResultBase* Parse(const char* json, size_t length) const {
+    virtual ParseResultBase* Parse(const char* json, size_t length, const char* jsonFileName) const {
         QtParseResult* pr = new QtParseResult;
         QJsonParseError error;
         pr->d = QJsonDocument::fromJson(QByteArray(json, length), &error);
@@ -143,7 +143,8 @@ public:
 #endif
 
 #if TEST_STRINGIFY
-    virtual StringResultBase* Stringify(const ParseResultBase* parseResult) const {
+    virtual StringResultBase* Stringify(const ParseResultBase* parseResult, const char* jsonFileName) const {
+        (void)jsonFileName;
         const QtParseResult* pr = static_cast<const QtParseResult*>(parseResult);
         QtStringResult* sr = new QtStringResult;
         sr->s = pr->d.toJson(QJsonDocument::Compact);

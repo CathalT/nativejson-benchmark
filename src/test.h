@@ -130,16 +130,18 @@ public:
 #endif
 
 #if TEST_PARSE
-    virtual ParseResultBase* Parse(const char* json, size_t length) const {
+    virtual ParseResultBase* Parse(const char* json, size_t length, const char* jsonFileName) const {
         (void)json;
         (void)length;
+        (void)jsonFileName;
         return 0;
     }
 #endif
 
 #if TEST_STRINGIFY
-    virtual StringResultBase* Stringify(const ParseResultBase* parseResult) const {
+    virtual StringResultBase* Stringify(const ParseResultBase* parseResult, const char* jsonFileName) const {
         (void)parseResult;
+        (void)jsonFileName;
         return 0;
     }
 #endif

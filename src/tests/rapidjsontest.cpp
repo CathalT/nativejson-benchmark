@@ -119,8 +119,9 @@ public:
 #endif
 
 #if TEST_PARSE
-    virtual ParseResultBase* Parse(const char* json, size_t length) const {
+    virtual ParseResultBase* Parse(const char* json, size_t length, const char* jsonFileName) const {
         (void)length;
+        (void)jsonFileName;
         RapidjsonParseResult* pr = new RapidjsonParseResult(json, length);
 #ifdef TEST_INSITU
         pr->document.ParseInsitu<TEST_PARSE_FLAG>(pr->buffer);
@@ -136,7 +137,8 @@ public:
 #endif
 
 #if TEST_STRINGIFY
-    virtual StringResultBase* Stringify(const ParseResultBase* parseResult) const {
+    virtual StringResultBase* Stringify(const ParseResultBase* parseResult, const char* jsonFileName) const {
+        (void)jsonFileName;
         const RapidjsonParseResult* pr = static_cast<const RapidjsonParseResult*>(parseResult);
         RapidjsonStringResult* sr = new RapidjsonStringResult;
         Writer<StringBuffer> writer(sr->sb);

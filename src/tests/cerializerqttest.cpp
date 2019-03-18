@@ -2,7 +2,7 @@
 
 
 #include <Cerializer/RapidJsonObj.h>
-#include "cerial_canada_struct.h"
+#include "JsonObjects.h"
 
 #include <iostream>
 #include <fstream>
@@ -13,15 +13,17 @@ struct T {
 
 class CerializerRapidJsonParseResult : public ParseResultBase {
 public:
-    rapidjson::Document d;
-    ObjectCollection c = ObjectCollection::fromJson(d);
+
+    BigObj* bigObj{};
+    BiggerObj* biggerObj{};
 };
 
 class CerializerRapidJsonStringResult : public StringResultBase {
 public:
-    virtual const char* c_str() const { return "";/* s.constData();*/ }
+    CerializerRapidJsonStringResult() = default;
+    virtual const char* c_str() const { return s.c_str(); }
 
-    const std::string& s;
+    std::string s;
 };
 
 class CerializerRapidJsonTest : public TestBase {
@@ -32,72 +34,45 @@ public:
 #endif
 
 #if TEST_PARSE
-    virtual ParseResultBase* Parse(const char* json, size_t length) const {
-        BiggerObj b;
-      
+    virtual ParseResultBase* Parse(const char* json, size_t length, const char* jsonFileName) const {
+        (void)length;
+        CerializerRapidJsonParseResult* pr = new CerializerRapidJsonParseResult();
+        
+        rapidjson::Document d;
+        d.Parse<0>(json);
 
-        std::ofstream outfile;
-        outfile.open("generated.json");
-        outfile << b.toJsonStr().c_str() << std::endl;
+        
 
-        outfile.close();
-
-        /*QtParseResult* pr = new QtParseResult;
-        QJsonParseError error;
-        pr->d = QJsonDocument::fromJson(QByteArray(json, length), &error);
-        if (error.error != QJsonParseError::NoError) {
+        /*if (d.HasParseError()) {
+            std::cout << "Error: " << d.GetParseError() << std::endl;
             delete pr;
-            return 0;
+            return nullptr;
+        }*/
+
+        if (strcmp(jsonFileName, "big.json") == 0) {
+            pr->bigObj = new BigObj(BigObj::fromJson(d));
         }
-        else
-    	   return pr;*/
-        return nullptr;
+        else if (strcmp(jsonFileName, "bigger.json") == 0) {
+            pr->biggerObj = new BiggerObj(BiggerObj::fromJson(d));
+        }
+
+        return pr;
     }
 #endif
 
 #if TEST_STRINGIFY
-    virtual StringResultBase* Stringify(const ParseResultBase* parseResult) const {
-       /* const QtParseResult* pr = static_cast<const QtParseResult*>(parseResult);
-        QtStringResult* sr = new QtStringResult;
-        sr->s = pr->d.toJson(QJsonDocument::Compact);
-        return sr;*/
-        return nullptr;
-    }
-#endif
+    virtual StringResultBase* Stringify(const ParseResultBase* parseResult, const char* jsonFileName) const {
+        const CerializerRapidJsonParseResult* pr = static_cast<const CerializerRapidJsonParseResult*>(parseResult);
+        CerializerRapidJsonStringResult* sr = new CerializerRapidJsonStringResult();
 
-#if TEST_PRETTIFY
-    virtual StringResultBase* Prettify(const ParseResultBase* parseResult) const {
-        /*const QtParseResult* pr = static_cast<const QtParseResult*>(parseResult);
-        QtStringResult* sr = new QtStringResult;
-        sr->s = pr->d.toJson(QJsonDocument::Indented);
-        return sr;*/
-        return nullptr;
-    }
-#endif
+        if (strcmp(jsonFileName, "big.json") == 0) {
+            sr->s = pr->bigObj->toJsonStr();
+        }
+        else if (strcmp(jsonFileName, "bigger.json") == 0) {
+            sr->s = pr->biggerObj->toJsonStr();
+        }
 
-#if TEST_STATISTICS
-    virtual bool Statistics(const ParseResultBase* parseResult, Stat* stat) const {
-        /*const QtParseResult* pr = static_cast<const QtParseResult*>(parseResult);
-        memset(stat, 0, sizeof(Stat));
-        if (pr->d.isObject())
-            GenStat(*stat, pr->d.object());
-        else if (pr->d.isArray())
-            GenStat(*stat, pr->d.array());*/
-        return true;
-    }
-#endif
-
-#if TEST_CONFORMANCE
-    virtual bool ParseDouble(const char* json, double* d) const {
-        /*QJsonDocument v = QJsonDocument::fromJson(QByteArray(json));
-        *d = v.array()[0].toDouble();*/
-        return true;
-    }
-
-    virtual bool ParseString(const char* json, std::string& s) const {
-        /*QJsonDocument v = QJsonDocument::fromJson(QByteArray(json));
-        s = v.array()[0].toString().toStdString();*/
-        return true;
+        return sr;
     }
 #endif
 };
