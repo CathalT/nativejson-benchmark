@@ -33,7 +33,7 @@ public:
 class CerializerQtTest : public TestBase {
 public:
 #if TEST_INFO
-    virtual const char* GetName() const { return "Cerializer Qt (C++)"; }
+    virtual const char* GetName() const { return "Cerializer Qt (C14++)"; }
     virtual const char* GetFilename() const { return __FILE__; }
 #endif
 

@@ -30,7 +30,7 @@ public:
 class CerializerNlohmannTest : public TestBase {
 public:
 #if TEST_INFO
-    virtual const char* GetName() const { return "Cerializer Nlohmann (C++11)"; }
+    virtual const char* GetName() const { return "Cerializer Nlohmann (C++14)"; }
     virtual const char* GetFilename() const { return __FILE__; }
 #endif
 

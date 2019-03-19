@@ -32,7 +32,7 @@ public:
 class CerializerRapidJsonTest : public TestBase {
 public:
 #if TEST_INFO
-    virtual const char* GetName() const { return "Cerializer RapidJson (C++)"; }
+    virtual const char* GetName() const { return "Cerializer RapidJson (C++14)"; }
     virtual const char* GetFilename() const { return __FILE__; }
 #endif
 

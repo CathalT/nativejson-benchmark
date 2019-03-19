@@ -35,7 +35,7 @@ public:
 class CerializerCpprestsdkTest : public TestBase {
 public:
 #if TEST_INFO
-    virtual const char* GetName() const { return "Cerializer C++ REST SDK (C++11)"; }
+    virtual const char* GetName() const { return "Cerializer C++ REST SDK (C++14)"; }
     virtual const char* GetFilename() const { return __FILE__; }
 #endif
 	
