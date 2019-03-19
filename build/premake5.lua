@@ -73,7 +73,7 @@ function gmake_common()
 end
 
 solution "benchmark"
-	configurations { "release" }
+	configurations { "Release" }
 	platforms { "x32", "x64" }
 
 	location ("./" .. (_ACTION or ""))
@@ -81,7 +81,7 @@ solution "benchmark"
 	flags { "ExtraWarnings" }
 	defines { "__STDC_FORMAT_MACROS=1" }
 
-	configuration "release"
+	configuration "Release"
 		defines { "NDEBUG" }
 		optimize "Full"
 
@@ -149,7 +149,7 @@ solution "benchmark"
 			buildoptions "-std=c++14"
 
 solution "jsonstat"
-    configurations { "release" }
+    configurations { "Release" }
     platforms { "x32", "x64" }
     location ("./" .. (_ACTION or ""))
     language "C++"
@@ -187,7 +187,7 @@ solution "jsonstat"
         "../thirdparty/facil.io/lib/facil/core/types/fiobj",
     }
 
-    configuration "release"
+    configuration "Release"
         defines { "NDEBUG" }
         optimize "Full"
 

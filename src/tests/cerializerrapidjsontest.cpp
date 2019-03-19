@@ -59,7 +59,7 @@ public:
         return pr;
     }
 #endif
-/*
+
 #if TEST_STRINGIFY
     virtual StringResultBase* Stringify(const ParseResultBase* parseResult, const char* jsonFileName) const {
         const CerializerRapidJsonParseResult* pr = static_cast<const CerializerRapidJsonParseResult*>(parseResult);
@@ -74,7 +74,7 @@ public:
 
         return sr;
     }
-#endif*/
+#endif
 };
 
 REGISTER_TEST(CerializerRapidJsonTest);

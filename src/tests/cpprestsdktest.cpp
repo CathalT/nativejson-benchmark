@@ -1,6 +1,6 @@
 #include "../test.h"
 
-#if HAS_CPPREST
+//#if HAS_CPPREST
 
 #include "cpprest/json.h"
 
@@ -141,4 +141,4 @@ public:
 
 REGISTER_TEST(CpprestsdkTest);
 
-#endif
+//#endif

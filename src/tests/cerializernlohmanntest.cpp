@@ -55,16 +55,23 @@ public:
     	return pr;
     }
 #endif
-    /*
+    
 #if TEST_STRINGIFY
     virtual StringResultBase* Stringify(const ParseResultBase* parseResult, const char* jsonFileName) const {
         (void)jsonFileName;
         const CerializerNlohmannParseResult* pr = static_cast<const CerializerNlohmannParseResult*>(parseResult);
         CerializerNlohmannStringResult* sr = new CerializerNlohmannStringResult;
-        //sr->s = pr->root.dump();
+
+        if (strcmp(jsonFileName, "big.json") == 0) {
+            sr->s = pr->bigObj->toJson().dump();
+        }
+        else if (strcmp(jsonFileName, "bigger.json") == 0) {
+            sr->s = pr->biggerObj->toJson().dump();
+        }
+
         return sr;
     }
-#endif*/
+#endif
 };
 
 REGISTER_TEST(CerializerNlohmannTest);

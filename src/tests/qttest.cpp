@@ -1,6 +1,6 @@
 #include "../test.h"
 
-#if HAS_QT
+//#if HAS_QT
 
 #include <QtCore/QJsonArray>
 #include <QtCore/QJsonDocument>
@@ -190,4 +190,4 @@ public:
 
 REGISTER_TEST(QtTest);
 
-#endif
+//#endif
