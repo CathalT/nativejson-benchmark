@@ -413,92 +413,92 @@ body { padding-top: 70px; }
 <h2>Source CSV</h2>
 <textarea id="textInput" class="form-control" rows="5" readonly>
 Type,Library,Filename,Time (ms),Memory (byte),MemoryPeak (byte),AllocCount,FileSize (byte)
-1. Parse,Cerializer C++ REST SDK (C++14),big.json,53.205200,534860,534896,53132,0
-1. Parse,Cerializer C++ REST SDK (C++14),bigger.json,608.280900,5348736,5787240,531322,0
-2. Stringify,Cerializer C++ REST SDK (C++14),big.json,48.162400,1201663,2250274,82848,0
-2. Stringify,Cerializer C++ REST SDK (C++14),bigger.json,552.694400,12016111,20404754,828321,0
-1. Parse,Cerializer Nlohmann (C++14),big.json,39.343800,534860,3098104,253114,0
-1. Parse,Cerializer Nlohmann (C++14),bigger.json,477.169500,5348736,32973968,3082874,0
-2. Stringify,Cerializer Nlohmann (C++14),big.json,45.349800,652543,4110218,250550,0
-2. Stringify,Cerializer Nlohmann (C++14),bigger.json,514.564300,6524911,39004818,3057073,0
-1. Parse,Cerializer Qt (C++14),big.json,24.362600,534860,534896,18812,0
-1. Parse,Cerializer Qt (C++14),bigger.json,249.946600,5348736,5787240,188122,0
-2. Stringify,Cerializer Qt (C++14),big.json,37.901900,8,82088,14191,0
-2. Stringify,Cerializer Qt (C++14),bigger.json,390.636100,8,82088,141901,0
-1. Parse,Cerializer RapidJson (C++14),big.json,6.592700,534860,1845878,19171,0
-1. Parse,Cerializer RapidJson (C++14),bigger.json,71.002700,5348736,18634670,191627,0
-2. Stringify,Cerializer RapidJson (C++14),big.json,6.084900,1566319,3561318,14218,0
-2. Stringify,Cerializer RapidJson (C++14),bigger.json,72.817600,17777119,39596590,141934,0
-1. Parse,C++ REST SDK (C++11),big.json,19.859000,8,8,1,0
-1. Parse,C++ REST SDK (C++11),bigger.json,213.934300,8,8,1,0
-2. Stringify,C++ REST SDK (C++11),big.json,6.199100,657823,1706434,18,0
-2. Stringify,C++ REST SDK (C++11),bigger.json,70.928200,6577711,14966354,21,0
-4. Statistics,C++ REST SDK (C++11),big.json,0.269700,0,0,0,0
-4. Statistics,C++ REST SDK (C++11),bigger.json,5.194100,0,0,0,0
-1. Parse,Nlohmann (C++11),big.json,14.147300,2477728,2477728,70983,0
-1. Parse,Nlohmann (C++11),bigger.json,149.258200,24777688,24777688,709833,0
-2. Stringify,Nlohmann (C++11),big.json,16.786800,652543,1701154,648,0
-2. Stringify,Nlohmann (C++11),bigger.json,173.712600,6524911,14913554,6321,0
-3. Prettify,Nlohmann (C++11),big.json,21.683300,1566319,3663506,36949,0
-3. Prettify,Nlohmann (C++11),bigger.json,243.479700,17777119,51331586,507923,0
-4. Statistics,Nlohmann (C++11),big.json,1.003300,0,32,630,0
-4. Statistics,Nlohmann (C++11),bigger.json,13.208000,0,32,6300,0
-1. Parse,Qt (C++),big.json,8.915600,8,8,1,0
-1. Parse,Qt (C++),bigger.json,93.983800,8,8,1,0
-2. Stringify,Qt (C++),big.json,24.587800,8,8,1,0
-2. Stringify,Qt (C++),bigger.json,250.031300,8,8,1,0
-3. Prettify,Qt (C++),big.json,26.676600,8,8,1,0
-3. Prettify,Qt (C++),bigger.json,278.995900,8,8,1,0
-4. Statistics,Qt (C++),big.json,4.110200,0,0,0,0
-4. Statistics,Qt (C++),bigger.json,42.903300,0,0,0,0
-1. Parse,RapidJSON_FullPrec (C++),big.json,3.263200,1311054,1314767,30,0
-1. Parse,RapidJSON_FullPrec (C++),bigger.json,33.468600,12847502,12851215,206,0
-2. Stringify,RapidJSON_FullPrec (C++),big.json,1.939400,851380,851637,25,0
-2. Stringify,RapidJSON_FullPrec (C++),bigger.json,24.334300,9697457,9697714,31,0
-3. Prettify,RapidJSON_FullPrec (C++),big.json,3.575600,1915570,1915827,27,0
-3. Prettify,RapidJSON_FullPrec (C++),bigger.json,45.619700,21819242,21819499,33,0
-4. Statistics,RapidJSON_FullPrec (C++),big.json,0.178900,0,0,0,0
-4. Statistics,RapidJSON_FullPrec (C++),bigger.json,2.132600,0,0,0,0
-5. Sax Round-trip,RapidJSON_FullPrec (C++),big.json,4.639800,851380,851894,27,0
-5. Sax Round-trip,RapidJSON_FullPrec (C++),bigger.json,52.159400,9697457,9697971,33,0
-6. SaxStatistics,RapidJSON_FullPrec (C++),big.json,2.661200,0,257,2,0
-6. SaxStatistics,RapidJSON_FullPrec (C++),bigger.json,29.968200,0,257,2,0
-1. Parse,RapidJSON_Insitu (C++),big.json,3.117000,2799068,2802524,27,0
-1. Parse,RapidJSON_Insitu (C++),bigger.json,32.712800,29973303,29976759,187,0
-2. Stringify,RapidJSON_Insitu (C++),big.json,1.937300,851380,851637,25,0
-2. Stringify,RapidJSON_Insitu (C++),bigger.json,24.638900,9697457,9697714,31,0
-3. Prettify,RapidJSON_Insitu (C++),big.json,3.722500,1915570,1915827,27,0
-3. Prettify,RapidJSON_Insitu (C++),bigger.json,45.703600,21819242,21819499,33,0
-4. Statistics,RapidJSON_Insitu (C++),big.json,0.181900,0,0,0,0
-4. Statistics,RapidJSON_Insitu (C++),bigger.json,2.061800,0,0,0,0
-5. Sax Round-trip,RapidJSON_Insitu (C++),big.json,4.768200,851380,2470767,27,0
-5. Sax Round-trip,RapidJSON_Insitu (C++),bigger.json,54.235400,9697457,28003399,33,0
-6. SaxStatistics,RapidJSON_Insitu (C++),big.json,2.887200,0,1619130,2,0
-6. SaxStatistics,RapidJSON_Insitu (C++),bigger.json,31.872100,0,18305685,2,0
-1. Parse,RapidJSON_Iterative (C++),big.json,3.355200,1311054,1314767,30,0
-1. Parse,RapidJSON_Iterative (C++),bigger.json,36.557300,12847502,12851215,206,0
-2. Stringify,RapidJSON_Iterative (C++),big.json,1.881200,851380,851637,25,0
-2. Stringify,RapidJSON_Iterative (C++),bigger.json,24.238200,9697457,9697714,31,0
-3. Prettify,RapidJSON_Iterative (C++),big.json,3.657400,1915570,1915827,27,0
-3. Prettify,RapidJSON_Iterative (C++),bigger.json,45.626500,21819242,21819499,33,0
-4. Statistics,RapidJSON_Iterative (C++),big.json,0.174000,0,0,0,0
-4. Statistics,RapidJSON_Iterative (C++),bigger.json,2.173700,0,0,0,0
-5. Sax Round-trip,RapidJSON_Iterative (C++),big.json,4.895300,851380,851894,27,0
-5. Sax Round-trip,RapidJSON_Iterative (C++),bigger.json,55.433400,9697457,9697971,33,0
-6. SaxStatistics,RapidJSON_Iterative (C++),big.json,3.060800,0,257,2,0
-6. SaxStatistics,RapidJSON_Iterative (C++),bigger.json,33.437400,0,257,2,0
-1. Parse,RapidJSON (C++),big.json,3.139400,1311054,1314767,30,0
-1. Parse,RapidJSON (C++),bigger.json,34.116000,12847502,12851215,206,0
-2. Stringify,RapidJSON (C++),big.json,1.928400,851380,851637,25,0
-2. Stringify,RapidJSON (C++),bigger.json,24.341800,9697457,9697714,31,0
-3. Prettify,RapidJSON (C++),big.json,3.639000,1915570,1915827,27,0
-3. Prettify,RapidJSON (C++),bigger.json,45.341000,21819242,21819499,33,0
-4. Statistics,RapidJSON (C++),big.json,0.174800,0,0,0,0
-4. Statistics,RapidJSON (C++),bigger.json,2.220000,0,0,0,0
-5. Sax Round-trip,RapidJSON (C++),big.json,4.368300,851380,851894,27,0
-5. Sax Round-trip,RapidJSON (C++),bigger.json,50.037000,9697457,9697971,33,0
-6. SaxStatistics,RapidJSON (C++),big.json,2.471100,0,257,2,0
-6. SaxStatistics,RapidJSON (C++),bigger.json,26.584200,0,257,2,0
+1. Parse,Cerializer C++ REST SDK (C++14),big.json,48.615100,534860,534896,35972,0
+1. Parse,Cerializer C++ REST SDK (C++14),bigger.json,569.991500,5348736,5787240,359722,0
+2. Stringify,Cerializer C++ REST SDK (C++14),big.json,47.104900,1201663,2250274,82848,0
+2. Stringify,Cerializer C++ REST SDK (C++14),bigger.json,540.292700,12016111,20404754,828321,0
+1. Parse,Cerializer Nlohmann (C++14),big.json,37.188300,534860,3098104,252484,0
+1. Parse,Cerializer Nlohmann (C++14),bigger.json,454.575000,5348736,32973968,3076574,0
+2. Stringify,Cerializer Nlohmann (C++14),big.json,45.198900,652543,4110218,250550,0
+2. Stringify,Cerializer Nlohmann (C++14),bigger.json,519.948400,6524911,39004818,3057073,0
+1. Parse,Cerializer Qt (C14++),big.json,20.452900,534860,534896,18812,0
+1. Parse,Cerializer Qt (C14++),bigger.json,209.876400,5348736,5787240,188122,0
+2. Stringify,Cerializer Qt (C14++),big.json,37.359300,8,82088,14191,0
+2. Stringify,Cerializer Qt (C14++),bigger.json,383.143000,8,82088,141901,0
+1. Parse,Cerializer RapidJson (C++14),big.json,5.617900,534860,1845878,19171,0
+1. Parse,Cerializer RapidJson (C++14),bigger.json,60.491700,5348736,18634670,191627,0
+2. Stringify,Cerializer RapidJson (C++14),big.json,6.087100,1566319,3561318,14218,0
+2. Stringify,Cerializer RapidJson (C++14),bigger.json,73.852800,17777119,39596590,141934,0
+1. Parse,C++ REST SDK (C++11),big.json,19.996200,8,8,1,0
+1. Parse,C++ REST SDK (C++11),bigger.json,215.017400,8,8,1,0
+2. Stringify,C++ REST SDK (C++11),big.json,6.112500,657823,1706434,18,0
+2. Stringify,C++ REST SDK (C++11),bigger.json,71.601000,6577711,14966354,21,0
+4. Statistics,C++ REST SDK (C++11),big.json,0.268800,0,0,0,0
+4. Statistics,C++ REST SDK (C++11),bigger.json,7.984500,0,0,0,0
+1. Parse,Nlohmann (C++11),big.json,14.656700,2477728,2477728,70983,0
+1. Parse,Nlohmann (C++11),bigger.json,152.449100,24777688,24777688,709833,0
+2. Stringify,Nlohmann (C++11),big.json,17.176800,652543,1701154,648,0
+2. Stringify,Nlohmann (C++11),bigger.json,177.763000,6524911,14913554,6321,0
+3. Prettify,Nlohmann (C++11),big.json,22.423500,1566319,3663506,36949,0
+3. Prettify,Nlohmann (C++11),bigger.json,251.675000,17777119,51331586,507923,0
+4. Statistics,Nlohmann (C++11),big.json,1.011600,0,32,630,0
+4. Statistics,Nlohmann (C++11),bigger.json,13.511400,0,32,6300,0
+1. Parse,Qt (C++),big.json,8.973500,8,8,1,0
+1. Parse,Qt (C++),bigger.json,94.231300,8,8,1,0
+2. Stringify,Qt (C++),big.json,24.509600,8,8,1,0
+2. Stringify,Qt (C++),bigger.json,246.114200,8,8,1,0
+3. Prettify,Qt (C++),big.json,26.668100,8,8,1,0
+3. Prettify,Qt (C++),bigger.json,274.404300,8,8,1,0
+4. Statistics,Qt (C++),big.json,4.058100,0,0,0,0
+4. Statistics,Qt (C++),bigger.json,42.871700,0,0,0,0
+1. Parse,RapidJSON_FullPrec (C++),big.json,3.547400,1311054,1314767,30,0
+1. Parse,RapidJSON_FullPrec (C++),bigger.json,37.823400,12847502,12851215,206,0
+2. Stringify,RapidJSON_FullPrec (C++),big.json,1.940300,851380,851637,25,0
+2. Stringify,RapidJSON_FullPrec (C++),bigger.json,24.645600,9697457,9697714,31,0
+3. Prettify,RapidJSON_FullPrec (C++),big.json,3.648900,1915570,1915827,27,0
+3. Prettify,RapidJSON_FullPrec (C++),bigger.json,45.791300,21819242,21819499,33,0
+4. Statistics,RapidJSON_FullPrec (C++),big.json,0.179300,0,0,0,0
+4. Statistics,RapidJSON_FullPrec (C++),bigger.json,3.661800,0,0,0,0
+5. Sax Round-trip,RapidJSON_FullPrec (C++),big.json,4.971900,851380,851894,27,0
+5. Sax Round-trip,RapidJSON_FullPrec (C++),bigger.json,57.008600,9697457,9697971,33,0
+6. SaxStatistics,RapidJSON_FullPrec (C++),big.json,2.956100,0,257,2,0
+6. SaxStatistics,RapidJSON_FullPrec (C++),bigger.json,31.783900,0,257,2,0
+1. Parse,RapidJSON_Insitu (C++),big.json,3.206200,2799068,2802524,27,0
+1. Parse,RapidJSON_Insitu (C++),bigger.json,33.344000,29973303,29976759,187,0
+2. Stringify,RapidJSON_Insitu (C++),big.json,1.965000,851380,851637,25,0
+2. Stringify,RapidJSON_Insitu (C++),bigger.json,24.832900,9697457,9697714,31,0
+3. Prettify,RapidJSON_Insitu (C++),big.json,3.707900,1915570,1915827,27,0
+3. Prettify,RapidJSON_Insitu (C++),bigger.json,46.025600,21819242,21819499,33,0
+4. Statistics,RapidJSON_Insitu (C++),big.json,0.181400,0,0,0,0
+4. Statistics,RapidJSON_Insitu (C++),bigger.json,2.297200,0,0,0,0
+5. Sax Round-trip,RapidJSON_Insitu (C++),big.json,4.927500,851380,2470767,27,0
+5. Sax Round-trip,RapidJSON_Insitu (C++),bigger.json,56.881900,9697457,28003399,33,0
+6. SaxStatistics,RapidJSON_Insitu (C++),big.json,2.934400,0,1619130,2,0
+6. SaxStatistics,RapidJSON_Insitu (C++),bigger.json,32.252000,0,18305685,2,0
+1. Parse,RapidJSON_Iterative (C++),big.json,3.841800,1311054,1314767,30,0
+1. Parse,RapidJSON_Iterative (C++),bigger.json,41.145900,12847502,12851215,206,0
+2. Stringify,RapidJSON_Iterative (C++),big.json,1.928700,851380,851637,25,0
+2. Stringify,RapidJSON_Iterative (C++),bigger.json,24.419100,9697457,9697714,31,0
+3. Prettify,RapidJSON_Iterative (C++),big.json,3.646400,1915570,1915827,27,0
+3. Prettify,RapidJSON_Iterative (C++),bigger.json,45.537900,21819242,21819499,33,0
+4. Statistics,RapidJSON_Iterative (C++),big.json,0.178800,0,0,0,0
+4. Statistics,RapidJSON_Iterative (C++),bigger.json,2.183000,0,0,0,0
+5. Sax Round-trip,RapidJSON_Iterative (C++),big.json,5.184700,851380,851894,27,0
+5. Sax Round-trip,RapidJSON_Iterative (C++),bigger.json,59.688700,9697457,9697971,33,0
+6. SaxStatistics,RapidJSON_Iterative (C++),big.json,3.355100,0,257,2,0
+6. SaxStatistics,RapidJSON_Iterative (C++),bigger.json,37.004500,0,257,2,0
+1. Parse,RapidJSON (C++),big.json,2.929900,1311054,1314767,30,0
+1. Parse,RapidJSON (C++),bigger.json,31.240100,12847502,12851215,206,0
+2. Stringify,RapidJSON (C++),big.json,1.931600,851380,851637,25,0
+2. Stringify,RapidJSON (C++),bigger.json,24.410600,9697457,9697714,31,0
+3. Prettify,RapidJSON (C++),big.json,3.661100,1915570,1915827,27,0
+3. Prettify,RapidJSON (C++),bigger.json,45.524100,21819242,21819499,33,0
+4. Statistics,RapidJSON (C++),big.json,0.179200,0,0,0,0
+4. Statistics,RapidJSON (C++),bigger.json,2.372600,0,0,0,0
+5. Sax Round-trip,RapidJSON (C++),big.json,4.768000,851380,851894,27,0
+5. Sax Round-trip,RapidJSON (C++),bigger.json,54.408900,9697457,9697971,33,0
+6. SaxStatistics,RapidJSON (C++),big.json,2.834800,0,257,2,0
+6. SaxStatistics,RapidJSON (C++),bigger.json,31.256800,0,257,2,0
 </textarea>
 </div>
 <div class="row" id="downloadDD" style="display: none">
